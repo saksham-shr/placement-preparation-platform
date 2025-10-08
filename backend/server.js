@@ -11,8 +11,13 @@ app.use(express.json());
 
 // Routes
 app.use('/api/auth', require('./routes/auth'));
-// Import and use other routes as you implement them:
-// e.g., app.use('/api/users', require('./routes/user'));
+app.use('/api/users', require('./routes/users'));
+app.use('/api/companies', require('./routes/companies'));
+app.use('/api/placementdrives', require('./routes/placementdrives'));
+app.use('/api/mocktests', require('./routes/mocktests'));
+app.use('/api/codingproblems', require('./routes/codingproblems'));
+app.use('/api/submissions', require('./routes/submissions'));
+app.use('/api/resumes', require('./routes/resumes'));
 
 app.get('/', (req, res) => res.send('API running'));
 
