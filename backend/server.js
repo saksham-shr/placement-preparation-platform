@@ -6,7 +6,13 @@ const cors = require('cors');
 const app = express();
 connectDB();
 
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:3000',  // ✅ Specific origin
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
 app.use(express.json());
 
 // Routes
